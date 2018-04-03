@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Object_Repository>
+	<PageNode Name='BillingCenter'>
+	    <Object objref= 'BC=>Login=>UseName=>TextBox' value="id->Login:LoginScreen:LoginDV:username-inputEl"></Object>
+	    <Object objref= 'BC=>Login=>Password=>TextBox' value="id->Login:LoginScreen:LoginDV:password-inputEl"></Object>
+	    <Object objref= 'BC=>Login=>LogIn=>Button' value="id->Login:LoginScreen:LoginDV:submit-btnEl"></Object>	    
+	    <Object objref='BC=>CreateAccount=>Account=>Button' value="id->TabBar:AccountsTab-btnInnerEl"></Object>
+	    <Object objref='BC=>CreateAccount=>Actions=>Button' value="id->AccountsGroup:AccountsMenuActions-btnInnerEl"></Object>
+	    <Object objref='BC=>CreateAccount=>NewAccount=>Button' value="id->AccountsGroup:AccountsMenuActions:AccountsMenuActions_NewAccount-textEl"></Object> 
+	    <Object objref='BC=>Account=>AccountNumber=>Element' value="id->NewAccount:NewAccountScreen:NewAccountDV:AccountNumber-inputEl"></Object>	      	    
+	    <Object objref='BC=>CreateAccount=>AccountName=>TextBox' value="id->NewAccount:NewAccountScreen:NewAccountDV:AccountName-inputEl"></Object>	    
+	    <Object objref='BC=>CreateAccount=>UWBrand=>DropDown' value="id->NewAccount:NewAccountScreen:NewAccountDV:UWCompany_Ext-inputEl"></Object>
+	    <Object objref='BC=>CreateAccount=>BillingPlan=>DropDown' value="id->NewAccount:NewAccountScreen:NewAccountDV:BillingPlan-inputEl"></Object>
+	    <Object objref='BC=>CreateAccount=>SendInvoicesBy=>DropDown' value="id->NewAccount:NewAccountScreen:NewAccountDV:SendInvoicesBy-inputEl"></Object>
+	    <Object objref='BC=>CreateAccount=>PaymentInstrument=>DropDown' value="id->NewAccount:NewAccountScreen:NewAccountDV:PaymentInstrument-inputEl"></Object>
+	    <Object objref='BC=>CreateAccount=>AddExistingContact=>Button' value="id->NewAccount:NewAccountScreen:NewAccountDV:NewAccountContactsLV_tb:addExistingContact-btnInnerEl"></Object>
+	    <Object objref='BC=>CreateAccount=>CompanyName=>TextBox' value="id->ContactSearchPopup:ContactSearchScreen:ContactSearchDV:NameInputSet:GlobalContactNameInputSet:Name-inputEl"></Object>
+	    <Object objref='BC=>CreateAccount=>Search=>Button' value="id->ContactSearchPopup:ContactSearchScreen:ContactSearchDV:SearchAndResetInputSet:SearchLinksInputSet:Search"></Object>
+	    <Object objref='BC=>CreateAccount=>Select=>Button' value="id->ContactSearchPopup:ContactSearchScreen:ContactSearchResultsLV:0:_Select"></Object>
+	    <Object objref='BC=>CreateAccount=>SetPrimaryPayer=>Button' value="id->NewAccount:NewAccountScreen:NewAccountDV:NewAccountContactsLV:0:setPrimaryPayer"></Object>
+	    <Object objref='BC=>CreateAccount=>OrganisationType=>Button' value="id->NewAccount:NewAccountScreen:NewAccountDV:OrganizationType-inputEl"></Object>
+	    <Object objref='BC=>CreateAccount=>CreateAccount=>Button' value="id->NewAccount:NewAccountScreen:Update-btnInnerEl"></Object>	    
+	    <Object objref='BC=>AddPolicy=>Actions=>Button' value="id->AccountGroup:AccountDetailMenuActions-btnInnerEl"></Object> 
+	    <Object objref='BC=>AddPolicy=>AddPolicy=>Button' value="id->AccountGroup:AccountDetailMenuActions:AccountDetailMenuActions_NewPolicy-textEl"></Object> 
+	    <Object objref='BC=>AddPolicy=>Policy=>TextBox' value="id->NewPolicyWizard:NewPolicyWizardSummaryStepScreen:NewPolicyDV:PolicyNumber-inputEl"></Object> 
+	    <Object objref='BC=>AddPolicy=>Segment=>DropDown' value="id->NewPolicyWizard:NewPolicyWizardSummaryStepScreen:NewPolicyDV:Segment-inputEl"></Object>
+	    <Object objref='BC=>AddPolicy=>UWPaper=>DropDown' value="id->NewPolicyWizard:NewPolicyWizardSummaryStepScreen:NewPolicyDV:UnderwritingPaper-inputEl"></Object>	    
+	    <Object objref='BC=>AddPolicy=>PaymentPlan=>DropDown' value="id->NewPolicyWizard:NewPolicyWizardSummaryStepScreen:NewPolicyDV:PaymentPlan-inputEl"></Object>
+	    <Object objref='BC=>AddPolicy=>AddExistingContact=>Button' value="id->NewPolicyWizard:NewPolicyWizardSummaryStepScreen:NewPolicyDV:NewPolicyContactsLV_tb:addExistingContact-btnInnerEl"></Object>
+	    <Object objref='BC=>AddPolicy=>CompanyName=>TextBox' value="id->ContactSearchPopup:ContactSearchScreen:ContactSearchDV:NameInputSet:GlobalContactNameInputSet:Name-inputEl"></Object>
+	    <Object objref='BC=>AddPolicy=>Search=>Button' value="id->ContactSearchPopup:ContactSearchScreen:ContactSearchDV:SearchAndResetInputSet:SearchLinksInputSet:Search"></Object>
+	    <Object objref='BC=>AddPolicy=>Select=>Button' value="id->ContactSearchPopup:ContactSearchScreen:ContactSearchResultsLV:0:_Select"></Object>    	    
+	    <Object objref='BC=>AddPolicy=>ContactType=>DropDown' value="id->ContactSearchPopup:ContactSearchScreen:ContactSearchDV:ContactType-inputEl"></Object>	    
+	    <Object objref='BC=>AddPolicy=>FirstName=>TextBox' value="id->ContactSearchPopup:ContactSearchScreen:ContactSearchDV:NameInputSet:GlobalPersonNameInputSet:FirstName-inputEl"></Object>
+	    <Object objref='BC=>AddPolicy=>EditRole1=>Button' value="id->NewPolicyWizard:NewPolicyWizardSummaryStepScreen:NewPolicyDV:NewPolicyContactsLV:0:EditRole"></Object>
+	    <Object objref='BC=>AddPolicy=>EditRole2=>Button' value="id->NewPolicyWizard:NewPolicyWizardSummaryStepScreen:NewPolicyDV:NewPolicyContactsLV:1:EditRole"></Object>
+	    <Object objref='BC=>AddPolicy=>EditRole3=>Button' value="id->NewPolicyWizard:NewPolicyWizardSummaryStepScreen:NewPolicyDV:NewPolicyContactsLV:2:EditRole"></Object>
+	    <Object objref='BC=>AddPolicy=>Agent=>Button' value="id->NewPolicyWizard:NewPolicyWizardSummaryStepScreen:NewPolicyDV:NewPolicyContactsLV:0:EditRole:2:polPeriodRole-textEl"></Object>
+	    <Object objref='BC=>AddPolicy=>PrimaryInsured=>Button' value="id->NewPolicyWizard:NewPolicyWizardSummaryStepScreen:NewPolicyDV:NewPolicyContactsLV:1:EditRole:4:polPeriodRole-textEl"></Object>
+	    <Object objref='BC=>AddPolicy=>Underwriter=>Button' value="id->NewPolicyWizard:NewPolicyWizardSummaryStepScreen:NewPolicyDV:NewPolicyContactsLV:2:EditRole:5:polPeriodRole-textEl"></Object>
+	    <Object objref='BC=>AddPolicy=>Next=>Button' value="id->NewPolicyWizard:Next-btnInnerEl"></Object>
+	    <Object objref='BC=>AddPolicy=>Add=>Button' value="id->NewPolicyWizard:NewPolicyWizardChargeStepScreen:PolicyAddChargesLV_tb:Add-btnInnerEl"></Object>
+	    <Object objref='BC=>AddPolicy=>PayerAccount=>TextBox' value="id->NewPolicyWizard:NewPolicyWizardSummaryStepScreen:NewPolicyDV:OverridingPayerAccount-inputEl"></Object>
+	    <Object objref='BC=>AddPolicy=>Type=>TextBox' value="xpath->//*[starts-with(@id,'gridview') and contains(@id,'-record-ext-record')]/td[2]/div"></Object>
+	    <Object objref='BC=>AddPolicy=>TypeInner=>TextBox' value="xpath->//*[starts-with(@id,'simplecombo-') and contains(@id,'inputEl')]"></Object>
+	    <Object objref='BC=>AddPolicy=>Amount=>TextBox' value="xpath->//*[starts-with(@id,'gridview') and contains(@id,'-record-ext-record')]/td[6]/div"></Object>
+	    <Object objref='BC=>AddPolicy=>AmountInner=>TextBox' value="xpath->//*[starts-with(@id,'textfield-') and contains(@id,'inputEl')]"></Object>
+	    <Object objref='BC=>AddPolicy=>RiskState=>TextBox' value="xpath->//*[starts-with(@id,'gridview') and contains(@id,'-record-ext-record')]/td[7]/div"></Object>
+	    <Object objref='BC=>AddPolicy=>RiskStateInner=>TextBox' value="xpath->//*[@name='RiskState']"></Object>
+	    <Object objref='BC=>AddPolicy=>Finish=>Button' value="id->NewPolicyWizard:Finish-btnInnerEl"></Object>
+	    <Object objref='BC=>Account=>AccounNumber=>Element' value="id->AccountDetailSummary:AccountDetailSummaryScreen:AccountDetailDV:AccountNumber-inputEl"></Object>
+	   	
+	   	<!--Smoke Test Objects -->    
+	    
+	    
+	    <Object objref='BC=>Home=>Desktop=>Link' value="id->TabBar:DesktopTab-btnInnerEl"></Object>
+		<Object objref='BC=>Desktop=>MyActivites=>Element' value="id->DesktopActivities:DesktopActivitiesScreen:0"></Object>
+		<Object objref='BC=>Home=>Account=>Button' value="id->TabBar:AccountsTab-btnInnerEl"></Object>
+		<Object objref='BC=>Account=>Accounts=>Element' value="id->Accounts:AccountSearchScreen:ttlBar"></Object>
+		<Object objref='BC=>Account=>AccountName=>TextBox' value="id->Accounts:AccountSearchScreen:AccountSearchDV:AccountNameCriterion-inputEl"></Object>
+		<Object objref='BC=>Account=>Search=>Button' value="id->Accounts:AccountSearchScreen:AccountSearchDV:SearchAndResetInputSet:SearchLinksInputSet:Search"></Object>
+		<Object objref='BC=>Account=>Account#=>TableCell1' value="xpath->//*[starts-with(@id,'gridview') and contains(@id,'-record-ext-record-')]/td[3]/div"></Object>
+		<Object objref='BC=>Account=>Account#=>TableCell1=>Link' value="id->Accounts:AccountSearchScreen:AccountSearchResultsLV:0:AccountNumber"></Object>
+		<Object objref='BC=>Account=>Summary=>Element' value="id->AccountDetailSummary:AccountDetailSummaryScreen:ttlBar"></Object>
+		<Object objref='BC=>Home=>Policy=>Link' value="id->TabBar:PoliciesTab-btnInnerEl"></Object>
+		<Object objref='BC=>Policy=>Policies=>Element' value="id->Policies:PolicySearchScreen:ttlBar"></Object>
+		<Object objref='BC=>Policy=>Policy#=>TextBox' value="id->Policies:PolicySearchScreen:PolicySearchDV:PolicyNumberCriterion-inputEl"></Object>
+		<Object objref='BC=>Policy=>Search=>Button' value="xpath->//*[@id='Policies:PolicySearchScreen:PolicySearchDV:SearchAndResetInputSet:SearchLinksInputSet:Search']"></Object>
+		<Object objref='BC=>Policy=>Policy#=>TableCell1' value="xpath->//*[starts-with(@id,'gridview') and contains(@id,'-record-ext-record-')]/td[3]/div"></Object>
+		<Object objref='BC=>Policy=>Policy#=>TableCell1=>Link' value="id->Policies:PolicySearchScreen:PolicySearchResultsLV:0:PolicyNumber"></Object>
+		<Object objref='BC=>Policy=>Summary=>Element' value="id->PolicyDetailSummary:PolicyDetailSummaryScreen:ttlBar"></Object>
+		<Object objref='BC=>Policy=>Transactions=>Link' value="xpath->//*[@id='PolicyGroup:PolicyDetailMenuLinks:PolicyGroup_PolicyDetailTransactions']/div/span"></Object>
+		<Object objref='BC=>Policy=>TroubleTickets=>Link' value="id->PolicyGroup:PolicyDetailMenuLinks:PolicyGroup_PolicyDetailTroubleTickets"></Object>
+		<Object objref='BC=>Policy=>Transactions=>Transactions=>Element' value="id->PolicyDetailTransactions:PolicyDetailJournalScreen:ttlBar"></Object>
+		<Object objref='BC=>Policy=>TroubleTickets=>TroubleTickets=>Element' value="id->PolicyDetailTroubleTickets:PolicyDetailTroubleTicketsScreen:ttlBar"></Object>
+		<Object objref='BC=>Policy=>Activities=>Link' value="id->PolicyGroup:PolicyDetailMenuLinks:activities"></Object>
+		<Object objref='BC=>Policy=>Activities=>Activities=>Element' value="id->PolicyPeriodActivitiesPage:ttlBar"></Object>
+		<Object objref='BC=>Policy=>Charges=>Link' value="id->PolicyGroup:PolicyDetailMenuLinks:PolicyGroup_PolicyDetailCharges"></Object>
+		<Object objref='BC=>Policy=>Charges=>Charges=>Element' value="id->PolicyDetailCharges:PolicyDetailChargesScreen:ttlBar"></Object>
+		<Object objref='BC=>Policy=>Commissions=>Link' value="id->PolicyGroup:PolicyDetailMenuLinks:PolicyGroup_PolicyDetailCommissions"></Object>
+		<Object objref='BC=>Policy=>Commissions=>Commissions=>Element' value="id->PolicyDetailCommissions:PolicyDetailCommissionsScreen:ttlBar"></Object>
+		<Object objref='BC=>Policy=>Contacts=>Link' value="id->PolicyGroup:PolicyDetailMenuLinks:PolicyGroup_PolicyDetailContacts"></Object>
+		<Object objref='BC=>Policy=>Contacts=>Contacts=>Element' value="id->PolicyDetailContacts:PolicyDetailContactsScreen:ttlBar"></Object>
+		<Object objref='BC=>Policy=>Delinquencies=>Link' value="id->PolicyGroup:PolicyDetailMenuLinks:PolicyGroup_PolicyDetailDelinquencies"></Object>
+		<Object objref='BC=>Policy=>Delinquencies=>Delinquencies=>Element' value="id->PolicyDetailDelinquencies:DelinquencyProcessesDetailScreen:0"></Object>
+		<Object objref='BC=>Policy=>Documents=>Link' value="id->PolicyGroup:PolicyDetailMenuLinks:PolicyGroup_PolicyDetailDocuments"></Object>
+		<Object objref='BC=>Policy=>Documents=>Documents=>Element' value="id->PolicyDetailDocuments:PolicyDetailDocumentsScreen:ttlBar"></Object>
+		<Object objref='BC=>Policy=>History=>Link' value="id->PolicyGroup:PolicyDetailMenuLinks:PolicyGroup_PolicyDetailHistory"></Object>
+		<Object objref='BC=>Policy=>History=>History=>Element' value="id->PolicyDetailHistory:PolicyDetailHistoryScreen:ttlBar"></Object>
+		<Object objref='BC=>Policy=>Journal=>Link' value="id->PolicyGroup:PolicyDetailMenuLinks:PolicyGroup_PolicyDetailJournal"></Object>
+		<Object objref='BC=>Policy=>Journal=>Journal=>Element' value="id->PolicyDetailJournal:JournalScreen:ttlBar"></Object>
+		<Object objref='BC=>Policy=>Ledger=>Link' value="id->PolicyGroup:PolicyDetailMenuLinks:PolicyGroup_PolicyDetailLedger"></Object>
+		<Object objref='BC=>Policy=>Ledger=>Ledger=>Element' value="id->PolicyDetailLedger:LedgerScreen:ttlBar"></Object>
+		<Object objref='BC=>Policy=>PaymentSchedule=>Link' value="id->PolicyGroup:PolicyDetailMenuLinks:PolicyGroup_PolicyDetailPayments"></Object>
+		<Object objref='BC=>Policy=>PaymentSchedule=>PaymentSchedule=>Element' value="id->PolicyDetailPayments:PolicyDetailPaymentsScreen:ttlBar"></Object>
+		<Object objref='BC=>Home=>Producer=>Link' value="id->TabBar:ProducersTab-btnInnerEl"></Object>
+		<Object objref='BC=>Producer=>Producer=>Element' value="id->Producers:ProducerSearchScreen:ttlBar"></Object>
+		<Object objref='BC=>Home=>Collections=>Link' value="id->TabBar:CollectionsTab-btnInnerEl"></Object>
+		<Object objref='BC=>Collections=>DirectCollectors=>Element' value="id->CollectionsDirectCollectorsPage:ttlBar"></Object>
+		<Object objref='BC=>Home=>Report=>Link' value="id->TabBar:ReportTab-btnInnerEl"></Object>
+		<Object objref='BC=>Report=>Report=>Element' value="id->CognosReportPage:CognosReportScreen:ttlBar"></Object>
+		
+		
+		<Object objref='BC=>Report=>AgingReport=>Link' value="partialLinkText->Aging"></Object>
+		<Object objref='BC=>AgingReport=>AccountName=>TextBox' value="cssSelector->input.clsSwsEditBox[type=text][name=_searchValue]"></Object>
+		<Object objref='BC=>AgingReport=>Search=>Button' value="cssSelector->button.clsPromptButton"></Object>
+		<Object objref='BC=>Home=>Tabs=>Link' value="xpath->//*[@id=':tabs-menu-trigger-btnIconEl']"></Object>
+		<Object objref='BC=>Home=>Tabs=>Administration=>Link' value="xpath->//*[starts-with(@id,'gmenuitem-') and contains(@id,'textEl')]"></Object>
+		<Object objref='BC=>Administration=>ActivityPatterns=>Element' value="id->ActivityPatterns:ActivityPatternsScreen:0"></Object>
+		
+			    
+	    
+	    	    
+	</PageNode>
+	
+	
+</Object_Repository>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="Testcase_Info">
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:element name="object_repro" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:simpleContent>
+                            <xsd:extension base="xsd:string">
+                                <xsd:attribute name="Name" type="xsd:normalizedString" use="required"/>
+                                <xsd:attribute name="PageName" type="xsd:normalizedString" use="required"/>
+                                <xsd:attribute name="Path" type="xsd:normalizedString" use="required"/>
+                            </xsd:extension>
+                        </xsd:simpleContent>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="Testcase" minOccurs="0">
+                    <xsd:complexType mixed="true">
+                        <xsd:sequence>
+                            <xsd:element name="Step" maxOccurs="unbounded">
+                                <xsd:complexType>
+                                    <xsd:simpleContent>
+                                        <xsd:extension base="xsd:string">
+                                            <xsd:attribute name="Keyword" type="xsd:normalizedString" use="required"/>
+                                            <xsd:attribute name="Objref" type="xsd:string" use="required"/>
+                                            <xsd:attribute name="Data1" type="xsd:string" use="required"/>
+                                        </xsd:extension>
+                                    </xsd:simpleContent>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

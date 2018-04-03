@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestNgMavenExampleSuite" parallel="false">
+
+<!-- <listeners>
+      <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+      <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners> -->
+  <test name="TestNGwithMaven">
+    <classes>
+      <class name="SeleniumAutomation.Executer"/>
+      <class name ="SeleniumAutomation.KeywordManager"/> 
+      <class name ="SeleniumAutomation.ReportFunctions"/>
+      <class name ="SeleniumAutomation.DriverScript"/>
+    </classes>
+    
+  </test>
+</suite>
+
+
+<!-- <suite name="Suite1" verbose="1" >
+<listeners>
+      <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+      <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners>
+  <test name="Regression Test Suite"   >
+    <packages>
+      <package name="packOne" />
+      <package name="packTwo" />
+   </packages>
+ </test>
+</suite>-->

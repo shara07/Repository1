@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Testcase_Info>    
+    <object_repro Name="ObjectRepro.xml" PageName="LoginPage" Path="C:\TestNgwithMaven\Automation\src\test\java\XMLReader"/>    
+    <Testcase>
+      	
+        <Step Keyword="LaunchBrowser" Objref="" Data1=""></Step>
+        <Step Keyword="Run" Objref="Location" Data1="TC_Name"></Step>
+        <Step Keyword="EnterValue" Objref="BC=>Login=>UseName=>TextBox" Data1="HouaB"></Step>        
+        <Step Keyword="EnterValue" Objref="BC=>Login=>Password=>TextBox" Data1="gw"></Step>
+        <Step Keyword="Click" Objref="BC=>Login=>LogIn=>Button" Data1="button"></Step>
+                    
+        <Step Keyword="Click" Objref="BC=>CreateAccount=>Account=>Button" Data1="Account"></Step>
+        <Step Keyword="Click" Objref="BC=>CreateAccount=>Actions=>Button" Data1="Actions"></Step>
+        <Step Keyword="Click" Objref="BC=>CreateAccount=>NewAccount=>Button" Data1="NewAccount"></Step>
+        
+        <Step Keyword="GetText" Objref="BC=>Account=>AccountNumber=>Element" Data1="AccountNumber"></Step>
+        
+        <Step Keyword="Click" Objref="BC=>CreateAccount=>AccountName=>TextBox" Data1="AccountName"></Step>
+        <Step Keyword="EnterValue" Objref="BC=>CreateAccount=>AccountName=>TextBox" Data1="Checking For Invoices"></Step>
+        
+        <Step Keyword="Click" Objref="BC=>CreateAccount=>UWBrand=>DropDown" Data1="UWBrand"></Step>
+        <Step Keyword="EnterValue" Objref="BC=>CreateAccount=>UWBrand=>DropDown" Data1="CompWest"></Step>
+        
+         <Step Keyword="Click" Objref="BC=>CreateAccount=>BillingPlan=>DropDown" Data1="BillingPlan"></Step>
+        <Step Keyword="EnterValue" Objref="BC=>CreateAccount=>BillingPlan=>DropDown" Data1="AF Billing Plan"></Step>
+        
+        <Step Keyword="Click" Objref="BC=>CreateAccount=>PaymentInstrument=>DropDown" Data1="PaymentInstrument"></Step>
+        <Step Keyword="Click" Objref="BC=>CreateAccount=>PaymentInstrument=>DropDown" Data1="PaymentInstrument"></Step>
+        <Step Keyword="SendKeys"  Data1="DELETE"></Step>
+        <Step Keyword="EnterValue" Objref="BC=>CreateAccount=>PaymentInstrument=>DropDown" Data1="Check"></Step>
+      
+        <Step Keyword="Click" Objref="BC=>CreateAccount=>SendInvoicesBy=>DropDown" Data1="SendInvoicesBy"></Step>
+        <Step Keyword="Click" Objref="BC=>CreateAccount=>SendInvoicesBy=>DropDown" Data1="SendInvoicesBy"></Step>
+        <Step Keyword="SendKeys"  Data1="DELETE"></Step>
+        <Step Keyword="EnterValue" Objref="BC=>CreateAccount=>SendInvoicesBy=>DropDown" Data1="Email"></Step>        
+        <Step Keyword="SendKeys"  Data1="ENTER"></Step>         
+        
+        <Step Keyword="Click" Objref="BC=>CreateAccount=>AddExistingContact=>Button" Data1="AddExistingContact"></Step>
+        <Step Keyword="Click" Objref="BC=>CreateAccount=>CompanyName=>TextBox" Data1="CompanyName"></Step>
+        <Step Keyword="EnterValue" Objref="BC=>CreateAccount=>CompanyName=>TextBox" Data1="f"></Step>
+        <Step Keyword="Click" Objref="BC=>CreateAccount=>Search=>Button" Data1="Search"></Step>
+        <Step Keyword="Click" Objref="BC=>CreateAccount=>Select=>Button" Data1="Select"></Step>
+        
+        <Step Keyword="Click" Objref="BC=>CreateAccount=>SetPrimaryPayer=>Button" Data1="SetPrimaryPayer"></Step>
+        <Step Keyword="Click" Objref="BC=>CreateAccount=>SendInvoicesBy=>DropDown" Data1="SendInvoicesBy"></Step>
+        <Step Keyword="Click" Objref="BC=>CreateAccount=>SendInvoicesBy=>DropDown" Data1="SendInvoicesBy"></Step>
+        <Step Keyword="SendKeys"  Data1="DELETE"></Step>
+        <Step Keyword="EnterValue" Objref="BC=>CreateAccount=>SendInvoicesBy=>DropDown" Data1="Email"></Step>        
+        <Step Keyword="SendKeys"  Data1="ENTER"></Step>        
+        <Step Keyword="Click" Objref="BC=>CreateAccount=>CreateAccount=>Button" Data1="CreateAccount"></Step>              
+        <Step Keyword="Click" Objref="BC=>AddPolicy=>Actions=>Button" Data1="ActionsButton"></Step>
+        <Step Keyword="Click" Objref="BC=>AddPolicy=>AddPolicy=>Button" Data1="AddPolicyButton"></Step>
+        <Step Keyword="Click" Objref="BC=>AddPolicy=>Policy=>TextBox" Data1="Policy"></Step>
+        <Step Keyword="RandomNumber" Objref="" Data1="PolicyNumber"></Step>
+        <Step Keyword="EnterValue" Objref="BC=>AddPolicy=>Policy=>TextBox" Data1="PolicyNumber"></Step> 
+        <Step Keyword="Click" Objref="BC=>AddPolicy=>Segment=>DropDown" Data1="Segment"></Step>
+        <Step Keyword="EnterValue" Objref="BC=>AddPolicy=>Segment=>DropDown" Data1="Excess"></Step>
+        <Step Keyword="Click" Objref="BC=>AddPolicy=>UWPaper=>DropDown" Data1="UWPaper"></Step>
+        <Step Keyword="Click" Objref="BC=>AddPolicy=>UWPaper=>DropDown" Data1="UWPaper"></Step>
+        <Step Keyword="SendKeys"  Data1="DELETE"></Step>
+        <Step Keyword="EnterValue" Objref="BC=>AddPolicy=>UWPaper=>DropDown" Data1="Accident Fund Nat"></Step> 
+        <Step Keyword="Click" Objref="BC=>AddPolicy=>UWPaper=>DropDown" Data1="UWPaper"></Step>        
+        <Step Keyword="Click" Objref="BC=>AddPolicy=>PaymentPlan=>DropDown" Data1="PaymentPlan"></Step>
+        <Step Keyword="EnterValue" Objref="BC=>AddPolicy=>PaymentPlan=>DropDown" Data1="Monthly 10"></Step>
+        <Step Keyword="SendKeys"  Data1="TAB"></Step>
+        <Step Keyword="Click" Objref="BC=>AddPolicy=>PayerAccount=>TextBox" Data1="PayerAccount"></Step>        
+        <Step Keyword="Click" Objref="BC=>AddPolicy=>AddExistingContact=>Button" Data1="AddExistingContact"></Step>
+        <Step Keyword="Click" Objref="BC=>AddPolicy=>CompanyName=>TextBox" Data1="CompanyName"></Step>
+        <Step Keyword="EnterValue" Objref="BC=>AddPolicy=>CompanyName=>TextBox" Data1="f"></Step>
+        <Step Keyword="Click" Objref="BC=>AddPolicy=>Search=>Button" Data1="Search"></Step>
+        <Step Keyword="Click" Objref="BC=>AddPolicy=>Select=>Button" Data1="Select"></Step>        
+        <Step Keyword="Click" Objref="BC=>AddPolicy=>AddExistingContact=>Button" Data1="AddExistingContact"></Step>
+        <Step Keyword="Click" Objref="BC=>AddPolicy=>CompanyName=>TextBox" Data1="CompanyName"></Step>
+        <Step Keyword="EnterValue" Objref="BC=>AddPolicy=>CompanyName=>TextBox" Data1="g"></Step>
+        <Step Keyword="Click" Objref="BC=>AddPolicy=>Search=>Button" Data1="Search"></Step>
+        <Step Keyword="Click" Objref="BC=>AddPolicy=>Select=>Button" Data1="Select"></Step>
+        <Step Keyword="Click" Objref="BC=>AddPolicy=>AddExistingContact=>Button" Data1="AddExistingContact"></Step>
+        <Step Keyword="Click" Objref="BC=>AddPolicy=>ContactType=>DropDown" Data1="ContactType"></Step>
+        <Step Keyword="EnterValue" Objref="BC=>AddPolicy=>ContactType=>DropDown" Data1="Person"></Step>
+        <Step Keyword="SendKeys"  Data1="TAB"></Step>
+        <Step Keyword="SendKeys"  Data1="TAB"></Step>
+       	<Step Keyword="Click" Objref="BC=>AddPolicy=>FirstName=>TextBox" Data1="FirstName"></Step>
+        <Step Keyword="EnterValue" Objref="BC=>AddPolicy=>FirstName=>TextBox" Data1="f"></Step>
+        <Step Keyword="Click" Objref="BC=>AddPolicy=>Search=>Button" Data1="Search"></Step>
+		<Step Keyword="Click" Objref="BC=>AddPolicy=>Select=>Button" Data1="Select"></Step>
+		<Step Keyword="Click" Objref="BC=>AddPolicy=>EditRole1=>Button" Data1="EditRole1"></Step>
+		<Step Keyword="Click" Objref="BC=>AddPolicy=>Agent=>Button" Data1="Agent"></Step>
+		<Step Keyword="Click" Objref="BC=>AddPolicy=>EditRole2=>Button" Data1="EditRole2"></Step>
+		<Step Keyword="Click" Objref="BC=>AddPolicy=>PrimaryInsured=>Button" Data1="PrimaryInsured"></Step>
+		<Step Keyword="Click" Objref="BC=>AddPolicy=>EditRole3=>Button" Data1="EditRole3"></Step>
+		<Step Keyword="Click" Objref="BC=>AddPolicy=>Underwriter=>Button" Data1="Underwriter"></Step>
+		<Step Keyword="Click" Objref="BC=>AddPolicy=>PayerAccount=>TextBox" Data1="PayerAccount"></Step>
+		<Step Keyword="Click" Objref="BC=>AddPolicy=>Next=>Button" Data1="Next"></Step>
+		<Step Keyword="Click" Objref="BC=>AddPolicy=>Add=>Button" Data1="Add"></Step>
+        <Step Keyword="Click" Objref="BC=>AddPolicy=>Type=>TextBox" Data1="ExcessPremium"></Step>
+        <Step Keyword="Click" Objref="BC=>AddPolicy=>TypeInner=>TextBox" Data1="clickonType"></Step>
+		<Step Keyword="SendKeys"  Data1="DELETE"></Step>
+		<Step Keyword="EnterValue" Objref="BC=>AddPolicy=>TypeInner=>TextBox" Data1="Excess Premium"></Step>
+		<Step Keyword="Click" Objref="BC=>AddPolicy=>Amount=>TextBox" Data1="Amount"></Step>
+		<Step Keyword="Click" Objref="BC=>AddPolicy=>Amount=>TextBox" Data1="Amount"></Step>
+		<Step Keyword="Click" Objref="BC=>AddPolicy=>AmountInner=>TextBox" Data1="AmountInner"></Step>
+		<Step Keyword="SendKeys"  Data1="DELETE"></Step>
+		<Step Keyword="EnterValue" Objref="BC=>AddPolicy=>AmountInner=>TextBox" Data1="1000"></Step>
+		<Step Keyword="Click" Objref="BC=>AddPolicy=>RiskState=>TextBox" Data1="RiskState"></Step>
+		<Step Keyword="Click" Objref="BC=>AddPolicy=>RiskStateInner=>TextBox" Data1="RiskStateInner"></Step>
+		<Step Keyword="SendKeys"  Data1="DELETE"></Step>
+		<Step Keyword="EnterValue" Objref="BC=>AddPolicy=>RiskStateInner=>TextBox" Data1="Michigan"></Step>
+		<Step Keyword="SendKeys"  Data1="TAB"></Step>
+		<Step Keyword="SendKeys"  Data1="TAB"></Step>		
+		<Step Keyword="Click" Objref="BC=>AddPolicy=>Finish=>Button" Data1="Finish"></Step>
+		<Step Keyword="MsgBox"  Data1="5"></Step>
+		<Step Keyword="VerifyValue" Objref="BC=>Account=>AccounNumber=>Element" Data1="AccountNumber"></Step>
+        <!-- <Step Keyword="CloseAllBrowsers" Objref="" Data1=""></Step>  -->     
+        
+       <!--   <Step Keyword="" Objref="" Data1=""></Step>-->
+    </Testcase>    
+</Testcase_Info>

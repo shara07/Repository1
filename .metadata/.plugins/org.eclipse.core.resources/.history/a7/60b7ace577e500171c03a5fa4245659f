@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Testcase_Info>    
+    <object_repro Name="ObjectRepro.xml" PageName="BillingCenter" Path="C:\TestNgwithMaven\Automation\src\test\java\XMLReader"/>    
+    <Testcase>          	
+        <Step Keyword="LaunchBrowser" Objref="" Data1="http://gwr1qabc1.accidentfund.com:8580/bc/BillingCenter.do" Data2="ie"></Step>  
+        <Step Keyword="EnterValue" Objref="BC=>Login=>UseName=>TextBox" Data1="HouaB"></Step>        
+        <!-- <Step Keyword="EnterValue" Objref="BC=>Login=>Password=>TextBox" Data1="gw"></Step>
+        <Step Keyword="Click" Objref="BC=>Login=>LogIn=>Button" Data1="Login"></Step>
+        <Step Keyword="Click" Objref="BC=>Home=>Desktop=>Link" Data1="Desktop"></Step>
+		<Step Keyword="VerifyValue" Objref="BC=>Desktop=>MyActivites=>Element" Data1="My Activities"></Step>
+		<Step Keyword="Click" Objref="BC=>Home=>Account=>Button" Data1="Account"></Step>
+		<Step Keyword="VerifyValue" Objref="BC=>Account=>Accounts=>Element" Data1="Accounts"></Step>
+		<Step Keyword="Click" Objref="BC=>Account=>AccountName=>TextBox" Data1="Account Name"></Step>
+		<Step Keyword="EnterValue" Objref="BC=>Account=>AccountName=>TextBox" Data1="A"></Step>
+		<Step Keyword="Click" Objref="BC=>Account=>Search=>Button" Data1="Search"></Step>
+		<Step Keyword="IsDisplayed" Objref="BC=>Account=>Account#=>TableCell1" Data1="Account Number"></Step>
+		<Step Keyword="Click" Objref="BC=>Account=>Account#=>TableCell1=>Link" Data1="Account Number"></Step>
+		<Step Keyword="VerifyValue" Objref="BC=>Account=>Summary=>Element" Data1="Summary"></Step>
+		<Step Keyword="Click" Objref="BC=>Home=>Policy=>Link" Data1="Policy"></Step>
+		<Step Keyword="VerifyValue" Objref="BC=>Policy=>Policies=>Element" Data1="Policies"></Step>
+		<Step Keyword="Click" Objref="BC=>Policy=>Policy#=>TextBox" Data1="Policy#"></Step>
+		<Step Keyword="EnterValue" Objref="BC=>Policy=>Policy#=>TextBox" Data1="1"></Step>
+		<Step Keyword="Click" Objref="BC=>Policy=>Search=>Button" Data1="Search"></Step>
+		<Step Keyword="Click" Objref="BC=>Policy=>Search=>Button" Data1="Search"></Step>
+		<Step Keyword="IsDisplayed" Objref="BC=>Policy=>Policy#=>TableCell1" Data1="Policy Number"></Step>
+		<Step Keyword="Click" Objref="BC=>Policy=>Policy#=>TableCell1=>Link" Data1="Policy Number"></Step>
+		<Step Keyword="VerifyValue" Objref="BC=>Policy=>Summary=>Element" Data1="Summary"></Step>
+		<Step Keyword="Click" Objref="BC=>Policy=>Transactions=>Link" Data1="Transactions"></Step>
+		<Step Keyword="VerifyValue" Objref="BC=>Policy=>Transactions=>Transactions=>Element" Data1="Transactions"></Step>
+		<Step Keyword="Click" Objref="BC=>Policy=>TroubleTickets=>Link" Data1="TroubleTickets"></Step>
+		<Step Keyword="VerifyValue" Objref="BC=>Policy=>TroubleTickets=>TroubleTickets=>Element" Data1="Trouble Tickets"></Step>
+		<Step Keyword="Click" Objref="BC=>Policy=>Activities=>Link" Data1="Activities"></Step>
+		<Step Keyword="VerifyValue" Objref="BC=>Policy=>Activities=>Activities=>Element" Data1="Activities"></Step>
+		<Step Keyword="Click" Objref="BC=>Policy=>Charges=>Link" Data1="Charges"></Step>
+		<Step Keyword="VerifyValue" Objref="BC=>Policy=>Charges=>Charges=>Element" Data1="Charges"></Step>
+		<Step Keyword="Click" Objref="BC=>Policy=>Commissions=>Link" Data1="Commissions"></Step>
+		<Step Keyword="VerifyValue" Objref="BC=>Policy=>Commissions=>Commissions=>Element" Data1="Commissions"></Step>
+		<Step Keyword="Click" Objref="BC=>Policy=>Contacts=>Link" Data1="Contacts"></Step>
+		<Step Keyword="VerifyValue" Objref="BC=>Policy=>Contacts=>Contacts=>Element" Data1="Contacts"></Step>
+		<Step Keyword="Click" Objref="BC=>Policy=>Delinquencies=>Link" Data1="Delinquencies"></Step>
+		<Step Keyword="VerifyValue" Objref="BC=>Policy=>Delinquencies=>Delinquencies=>Element" Data1="Delinquencies"></Step>
+		<Step Keyword="Click" Objref="BC=>Policy=>Documents=>Link" Data1="Documents"></Step>
+		<Step Keyword="VerifyValue" Objref="BC=>Policy=>Documents=>Documents=>Element" Data1="Documents"></Step>
+		<Step Keyword="Click" Objref="BC=>Policy=>History=>Link" Data1="History"></Step>
+		<Step Keyword="VerifyValue" Objref="BC=>Policy=>History=>History=>Element" Data1="History"></Step>
+		<Step Keyword="Click" Objref="BC=>Policy=>Journal=>Link" Data1="Journal"></Step>
+		<Step Keyword="VerifyValue" Objref="BC=>Policy=>Journal=>Journal=>Element" Data1="Journal"></Step>
+		<Step Keyword="Click" Objref="BC=>Policy=>Ledger=>Link" Data1="Ledger"></Step>
+		<Step Keyword="VerifyValue" Objref="BC=>Policy=>Ledger=>Ledger=>Element" Data1="Ledger"></Step>
+		<Step Keyword="Click" Objref="BC=>Policy=>PaymentSchedule=>Link" Data1="Payment Schedule"></Step>
+		<Step Keyword="VerifyValue" Objref="BC=>Policy=>PaymentSchedule=>PaymentSchedule=>Element" Data1="Payment Schedule"></Step>
+		<Step Keyword="Click" Objref="BC=>Home=>Producer=>Link" Data1="Producer"></Step>
+		<Step Keyword="VerifyValue" Objref="BC=>Producer=>Producer=>Element" Data1="Producers"></Step>
+		<Step Keyword="Click" Objref="BC=>Home=>Collections=>Link" Data1="Collections"></Step>
+		<Step Keyword="VerifyValue" Objref="BC=>Collections=>DirectCollectors=>Element" Data1="Direct Collectors"></Step>
+     	<Step Keyword="Click" Objref="BC=>Home=>Report=>Link" Data1="Report"></Step>
+		<Step Keyword="VerifyValue" Objref="BC=>Report=>Report=>Element" Data1="Report"></Step>
+        <Step Keyword="IFrameClick" Objref="BC=>Report=>AgingReport=>Link" Data1="cognosFrame" Data2="Aging Report"> </Step>      
+        <Step Keyword="SwitchWindow"> </Step>
+        <Step Keyword="ClickThroughIteration" Objref="BC=>AgingReport=>AccountName=>TextBox" Data1="3" Data2="AccountName"></Step>
+        <Step Keyword="EnterThroughIteration" Objref="BC=>AgingReport=>AccountName=>TextBox" Data1="3" Data2="A"></Step>
+        <Step Keyword="CloseSwitchWindow"> </Step>
+        <Step Keyword="Click" Objref="BC=>Home=>Tabs=>Link" Data1="Tabs"></Step>
+		<Step Keyword="Click" Objref="BC=>Home=>Tabs=>Administration=>Link" Data1="Administration"></Step>
+		<Step Keyword="VerifyValue" Objref="BC=>Administration=>ActivityPatterns=>Element" Data1="Activity Patterns"></Step>
+        <Step Keyword="Click" Objref="BC=>Settings=>Button" Data1="Settings"></Step>
+        <Step Keyword="Click" Objref="BC=>Logout=>Button" Data1="Logout"></Step>
+        <Step Keyword="CloseAllBrowsers" Objref="" Data1=""></Step> -->
+  </Testcase>    
+</Testcase_Info>

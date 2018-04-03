@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Testsuite_Info>
+    <!-- Login  -->
+    <Testcase Name="BC_SmokeTest" Path="C:\TestNgwithMaven\Automation\src\test\java\XMLReader" ApplcationName="BillingCenter" ExecutionStatus="Yes"/>
+    <Testcase Name="CheckingForInvoice" Path="C:\TestNgwithMaven\Automation\src\test\java\XMLReader" ApplcationName="BillingCenter" ExecutionStatus="No"/>    
+    <Testcase Name="ManualDisbursement" Path="C:\TestNgwithMaven\Automation\src\test\java\XMLReader" ApplcationName="BillingCenter" ExecutionStatus="No"/>
+     <Testcase Name="ManualDisbursement2" Path="C:\TestNgwithMaven\Automation\src\test\java\XMLReader" ApplcationName="BillingCenter" ExecutionStatus="No"/>
+</Testsuite_Info>

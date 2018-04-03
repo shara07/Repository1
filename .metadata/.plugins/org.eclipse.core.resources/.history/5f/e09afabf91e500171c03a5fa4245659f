@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Testcase_Info>
+    <object_repro Name="ObjectRepro.xml" PageName="BillingCenter" Path="C:\TestNgwithMaven\Automation\src\test\java\XMLReader"/>    
+    <!-- Login  -->
+    <Testcase>       
+        <Step Keyword="Click" Objref="BC->CreateAccount->Account->Button" Data1="Account"></Step>
+        <Step Keyword="Click" Objref="BC=>CreateAccount=>Actions=>Button" Data1="Actions"></Step>
+        <Step Keyword="Click" Objref="BC=>CreateAccount=>NewAccount=>Button" Data1="NewAccount"></Step>
+        
+        <Step Keyword="GetText" Objref="BC=>Account=>AccountNumber=>Element" Data1="AccountNumber"></Step>
+        
+        <Step Keyword="Click" Objref="BC=>CreateAccount=>AccountName=>TextBox" Data1="AccountName"></Step>
+        <Step Keyword="EnterValue" Objref="BC=>CreateAccount=>AccountName=>TextBox" Data1="Checking For Invoices"></Step>
+        
+        <Step Keyword="Click" Objref="BC=>CreateAccount=>UWBrand=>DropDown" Data1="UWBrand"></Step>
+        <Step Keyword="EnterValue" Objref="BC=>CreateAccount=>UWBrand=>DropDown" Data1="CompWest"></Step>
+        
+         <Step Keyword="Click" Objref="BC=>CreateAccount=>BillingPlan=>DropDown" Data1="BillingPlan"></Step>
+        <Step Keyword="EnterValue" Objref="BC=>CreateAccount=>BillingPlan=>DropDown" Data1="AF Billing Plan"></Step>
+        
+        <Step Keyword="Click" Objref="BC=>CreateAccount=>PaymentInstrument=>DropDown" Data1="PaymentInstrument"></Step>
+        <Step Keyword="Click" Objref="BC=>CreateAccount=>PaymentInstrument=>DropDown" Data1="PaymentInstrument"></Step>
+        <Step Keyword="SendKeys"  Data1="DELETE"></Step>
+        <Step Keyword="EnterValue" Objref="BC=>CreateAccount=>PaymentInstrument=>DropDown" Data1="Check"></Step>
+      
+        <Step Keyword="Click" Objref="BC=>CreateAccount=>SendInvoicesBy=>DropDown" Data1="SendInvoicesBy"></Step>
+        <Step Keyword="Click" Objref="BC=>CreateAccount=>SendInvoicesBy=>DropDown" Data1="SendInvoicesBy"></Step>
+        <Step Keyword="SendKeys"  Data1="DELETE"></Step>
+        <Step Keyword="EnterValue" Objref="BC=>CreateAccount=>SendInvoicesBy=>DropDown" Data1="Email"></Step>        
+        <Step Keyword="SendKeys"  Data1="ENTER"></Step>        
+    </Testcase>
+</Testcase_Info>

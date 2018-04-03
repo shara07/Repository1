@@ -1,0 +1,20 @@
+# Created on 2017-12-15T14:44:39.756
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: DEFAULT
+java.io.EOFException
+	at java.io.DataInputStream.readInt(DataInputStream.java:392)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:391)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+# Created on 2017-12-15T14:44:40.380
+Unexpected IOException with stream: unable to find the locator: Unable to find element with css selector == #NewAccount\:NewAccountScreen\:NewAccountDV\:BillingPlan\-inputEl
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'MANUALVDI15', ip: '10.10.52.74', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_144'
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 10, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:38999/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, unhandledPromptBehavior: dismiss}
+Session ID: 7858823c-04a6-4ae8-99cc-5e2ec1a5f5fd
+*** Element info: {Using=id, value=NewAccount:NewAccountScreen:NewAccountDV:BillingPlan-inputEl}
+
+

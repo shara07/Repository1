@@ -1,0 +1,57 @@
+package SeleniumAutomation;
+
+import java.awt.AWTException;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.text.SimpleDateFormat;
+
+import javax.swing.JFrame;
+
+/*import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.DateUtil;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Workbook;*/
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
+
+import XMLReader.MainTestSuite;
+
+public class DriverScript {
+	
+@Test
+public void createAccount()
+	{
+		Executer excuter = new Executer();
+    	try {
+			excuter.Execute();
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		} 
+    	System.out.println("Finish");
+	}
+
+
+public static void main(String[] args) throws IOException, InstantiationException, IllegalAccessException, NoSuchMethodException, SecurityException, IllegalArgumentException, InvocationTargetException {
+    	Executer excuter = new Executer();
+    	excuter.Execute(); 
+    	System.out.println("Finish");
+ }
+
+
+}

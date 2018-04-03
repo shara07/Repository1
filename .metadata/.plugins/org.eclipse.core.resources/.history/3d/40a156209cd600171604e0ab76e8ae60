@@ -1,0 +1,169 @@
+package SeleniumAutomation;
+
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.io.IOException;
+
+import org.apache.velocity.runtime.directive.Parse;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+import XMLReader.TestStep;
+
+
+
+public class KeywordManager {
+	
+	public void LaunchBrowser(WebDriver WebDriver, TestStep step) {	
+				
+		//ReportFunctions.LogRepoter("Fail", "double click on object", "Application launched succesfully");
+		
+	}
+	public void EnterValue(WebDriver WebDriver, TestStep step) throws IOException
+	{		
+		String result = "fail";
+			
+		try{
+			String[] refValues = step.getObjrefValue().split("\\->");
+			
+			String data1value = step.getData1().trim();
+			
+			if(refValues[0].equals("id"))
+			{
+				WebDriver.findElement(By.id(refValues[1])).sendKeys(step.getData1());
+			}
+			if(refValues[0].equals("xpath"))
+			{
+				WebDriver.findElement(By.id(refValues[1])).sendKeys(step.getData1());
+			}
+			if(refValues[0].equals("csslocator"))
+			{
+				WebDriver.findElement(By.id(refValues[1])).sendKeys(step.getData1());
+			}
+			if(refValues[0].equals("classname"))
+			{
+				WebDriver.findElement(By.id(refValues[1])).sendKeys(step.getData1());
+			}
+			System.out.println("Succesfully entered"+" "+data1value);
+			result = "pass";
+
+			
+			ReportFunctions.LogRepoter(result, step.getKeyword(), "Succesfully entered"+" "+data1value);
+		}
+		catch(Exception ex)
+		{
+			ReportFunctions.LogRepoter(result, step.getKeyword(), ex.getMessage());
+		}			//return false;
+	}
+	
+	public void Click(WebDriver WebDriver, TestStep step) throws IOException {
+		
+		String result = "fail";
+		
+		try{
+			String[] refValues = step.getObjrefValue().split("\\->");
+			String data1value = step.getData1().trim();
+			WebElement element = null;
+			if(refValues[0].equals("id"))
+			{
+				element = WebDriver.findElement(By.id(refValues[1]));
+			}
+			if(refValues[0].equals("xpath"))
+			{
+				element = WebDriver.findElement(By.id(refValues[1]));
+			}
+			if(refValues[0].equals("csslocator"))
+			{
+				element = WebDriver.findElement(By.id(refValues[1]));
+			}
+			if(refValues[0].equals("classname"))
+			{
+				element = WebDriver.findElement(By.id(refValues[1]));
+			}
+			
+			if (element.isEnabled()){
+				System.out.println("Succesfully clicked on"+" "+data1value);			
+				element.click();	
+				result = "pass";
+				ReportFunctions.LogRepoter(result, step.getKeyword(), "Succesfully entered"+" "+data1value);
+			}
+		}
+		catch(Exception ex)
+		{
+			ReportFunctions.LogRepoter(result, step.getKeyword(), ex.getMessage());
+		}		
+	}
+	
+	public void SENDKEYS(WebDriver WebDriver, TestStep step) throws IOException, AWTException
+	{
+		String result = "fail";
+		Robot robot = new Robot();
+			
+		try{
+			String data1value = step.getData1().trim();
+			if (step.getData1().equals("ENTER"))			
+			{
+				robot.keyPress(KeyEvent.VK_ENTER);
+				robot.keyRelease(KeyEvent.VK_ENTER);
+			}
+			if (step.getData1().equals("TAB"))			
+			{
+				robot.keyPress(KeyEvent.VK_TAB);
+				robot.keyRelease(KeyEvent.VK_TAB);
+			}
+			if (step.getData1().equals("DELETE"))			
+			{
+				robot.keyPress(KeyEvent.VK_DELETE);
+				robot.keyRelease(KeyEvent.VK_DELETE);
+			}
+			if (step.getData1().equals("ALTSHIFTT"))			
+			{
+				robot.keyPress(KeyEvent.VK_ALT);
+				robot.keyPress(KeyEvent.VK_SHIFT);
+				robot.keyPress(KeyEvent.VK_T);
+				robot.keyRelease(KeyEvent.VK_ALT);
+				robot.keyRelease(KeyEvent.VK_SHIFT);
+				robot.keyRelease(KeyEvent.VK_T);
+			}
+			result = "pass";
+			ReportFunctions.LogRepoter(result, step.getKeyword(), "Succesfully sent data:"+" "+data1value);		
+		}
+		catch(Exception ex)
+		{
+			ReportFunctions.LogRepoter(result, step.getKeyword(), ex.getMessage());
+		}		
+	}
+		
+	
+	
+	
+	
+	
+	public void CloseBrowser(WebDriver WebDriver, TestStep step)
+	{
+		WebDriver.close();
+	}
+	
+	public static boolean CloseAllBrowsers(WebDriver WebDriver, TestStep step) {
+		
+		try{	
+			Runtime.getRuntime().exec("taskkill /F /IM iexplore.exe");
+			Runtime.getRuntime().exec("taskkill /F /IM IEDriverServer.exe");
+		//	ReportFunctions.LogRepoter("pass", "close all browsers", "successfully closed all browsers");
+			
+		} catch (Exception e) {
+
+			/*System.out.println("unable to find the browser" + " " + e.getMessage());
+			ReportFunctions.LogRepoter("Fail", "close all browsers", "unable to close all browsers");
+			return false;*/
+		}
+		return true;
+}
+}    
+    
+     
+    

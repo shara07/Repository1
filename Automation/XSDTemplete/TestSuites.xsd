@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="Testsuite_Info">
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:element name="Testcase" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:simpleContent>
+                            <xsd:extension base="xsd:string">
+                                <xsd:attribute name="Name" type="xsd:normalizedString" use="required"/>
+                                <xsd:attribute name="Path" type="xsd:normalizedString" use="required"/>
+                                <xsd:attribute name="ApplcationName" type="xsd:normalizedString" use="required"/>
+                                <xsd:attribute name="ExecutionStatus" type="xsd:normalizedString" use="required"/>
+                            </xsd:extension>
+                        </xsd:simpleContent>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

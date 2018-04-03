@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Testcase_Info>
+    <object_repro Name="ObjectRepro.xml" PageName="LoginPage" Path="C:\TestNgwithMaven\Automation\src\test\java\XMLReader"/>    
+    <!-- Login  -->
+    <Testcase name="ManualDisbursement">
+        <Step Keyword="LaunchBrowser" Objref="BC=>Login=>UseName=>TextBox" Data1=""></Step>
+        <Step Keyword="EnterValue" Objref="BC=>Login=>UseName=>TextBox" Data1="HouaB"></Step>
+        <Step Keyword="Click" Objref="BC=>Login=>UseName=>TextBox" Data1=""></Step>
+        <Step Keyword="EnterValue" Objref="BC=>Login=>Password=>TextBox" Data1=""></Step>
+        <Step Keyword="Click" Objref="BC=>Login=>LogIn=>Butt" Data1=""></Step>
+    </Testcase>
+</Testcase_Info>

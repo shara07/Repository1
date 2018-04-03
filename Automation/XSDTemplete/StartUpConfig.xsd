@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="Config">
+        <xsd:complexType mixed="true">
+            <xsd:sequence>
+                <xsd:element name="TestSuite" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:simpleContent>
+                            <xsd:extension base="xsd:string">
+                                <xsd:attribute name="name" type="xsd:normalizedString" use="required"/>
+                                <xsd:attribute name="path" type="xsd:normalizedString" use="required"/>
+                                <xsd:attribute name="Browser" type="xsd:normalizedString" use="required"/>
+                                <xsd:attribute name="Url" type="xsd:anyURI" use="required"/>
+                                <xsd:attribute name="Maximise" type="xsd:normalizedString" use="required"/>
+                            </xsd:extension>
+                        </xsd:simpleContent>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

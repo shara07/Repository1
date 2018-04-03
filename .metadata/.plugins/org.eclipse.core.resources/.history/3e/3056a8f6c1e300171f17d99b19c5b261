@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Config>
+    <!-- Login  -->
+    <TestSuite name="TestSuites" path="C:\TestNgwithMaven\Automation\src\test\java\XMLReader"
+    <!--Browser= "IE" Url="http://gwr1qabc1.accidentfund.com:8580/bc/BillingCenter.do" Maximise="True"/>-->
+
+</Config>

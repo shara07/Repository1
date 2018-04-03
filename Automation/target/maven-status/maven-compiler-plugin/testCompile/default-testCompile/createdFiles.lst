@@ -1,0 +1,17 @@
+XMLReader\MainTestSuite.class
+XMLReader\TestcaseHeader.class
+XMLReader\TestStep.class
+XMLReader\TestCase.class
+SeleniumAutomation\RunKeyword.class
+XMLReader\ObjectRepro.class
+SeleniumAutomation\ReportFunctions.class
+XMLReader\StartConfigReader.class
+SeleniumAutomation\DriverScript.class
+XMLReader\TestSuite.class
+XMLReader\TestSuiteReader.class
+SeleniumAutomation\AppTest.class
+SeleniumAutomation\Executer.class
+SeleniumAutomation\KeywordManager.class
+XMLReader\ObjectReproReader.class
+SeleniumAutomation\AppScript.class
+XMLReader\TestStepReader.class

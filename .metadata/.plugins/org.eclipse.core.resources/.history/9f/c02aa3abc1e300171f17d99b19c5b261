@@ -1,0 +1,752 @@
+package SeleniumAutomation;
+
+import java.awt.AWTException;
+import java.awt.FlowLayout;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.io.File;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Random;
+import java.util.Set;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+import XMLReader.TestStep;
+
+public class KeywordManager {
+	
+	public void KeywordManager()
+	{
+		
+	}
+	ReportFunctions report = null;
+	String ParentWindowHandle=null;
+	public void LaunchBrowser(WebDriver WebDriver, TestStep step, HashMap<String, String> hmap) {	
+		if(report == null){
+		report =  new ReportFunctions();
+		}
+		
+	}	
+	public void EnterValue(WebDriver WebDriver, TestStep step, HashMap<String, String> hmap) throws IOException
+	{		
+		if(report == null){
+			report =  new ReportFunctions();
+		}
+		String result = "fail";
+		String data1value=null;
+			
+		try{
+			String[] refValues = step.getObjrefValue().split("\\->");			
+			if (hmap.containsKey(step.getData1().trim())) 
+			{
+				data1value = hmap.get(step.getData1().trim());
+			}
+			else{
+				data1value = step.getData1().trim();
+			}
+			if(refValues[0].equals("id"))
+			{
+				WebDriver.findElement(By.id(refValues[1])).sendKeys(data1value);
+			}
+			if(refValues[0].equals("xpath"))
+			{
+				WebDriver.findElement(By.xpath(refValues[1])).sendKeys(data1value);
+			}
+			if(refValues[0].equals("cssSelector"))
+			{
+				WebDriver.findElement(By.cssSelector(refValues[1])).sendKeys(data1value);
+			}
+			if(refValues[0].equals("className"))
+			{
+				WebDriver.findElement(By.className(refValues[1])).sendKeys(data1value);
+			}
+			
+			result = "pass";
+			System.out.println("Successfully entered"+" "+data1value);
+			report.LogRepoter(hmap, result, step.getKeyword(), "Succesfully entered"+" "+data1value);
+			
+		}
+		catch(Exception ex)
+		{
+			System.out.println("unable to find the locator:"+" "+ex.getMessage());
+			report.LogRepoter(hmap, result, step.getKeyword(), ex.getMessage());
+		}			
+	}
+	public void Click(WebDriver WebDriver, TestStep step, HashMap<String, String> hmap) throws IOException {
+		
+		if(report == null){
+			report =  new ReportFunctions();
+		}
+		
+		String result = "fail";
+		
+		try{
+			String[] refValues = step.getObjrefValue().split("\\->");
+			String data1value = step.getData1().trim();
+			WebElement element = null;
+			if(refValues[0].equals("id"))
+			{
+				element = WebDriver.findElement(By.id(refValues[1]));
+			}
+			if(refValues[0].equals("xpath"))
+			{
+				element = WebDriver.findElement(By.xpath(refValues[1]));
+			}
+			if(refValues[0].equals("cssSelector"))
+			{
+				element = WebDriver.findElement(By.cssSelector(refValues[1]));
+			}
+			if(refValues[0].equals("className"))
+			{
+				element = WebDriver.findElement(By.className(refValues[1]));
+			}
+			
+			if (element.isEnabled()){
+				System.out.println("Succesfully clicked on"+" "+data1value);			
+				element.click();	
+				result = "pass";
+				report.LogRepoter(hmap, result, step.getKeyword(), "Succesfully clicked"+" "+data1value);
+			}
+		}
+		catch(Exception ex)
+		{
+
+			System.out.println("unable to find the locator:"+" "+ex.getMessage());
+			report.LogRepoter(hmap, result, step.getKeyword(), ex.getMessage());
+		}		
+	}
+	public void SendKeys(WebDriver WebDriver, TestStep step, HashMap<String, String> hmap) throws IOException, AWTException
+	{
+		if(report == null){
+			report =  new ReportFunctions();
+		}
+		String result = "fail";
+		Robot robot = new Robot();
+			
+		try{
+			String data1value = step.getData1().trim();
+			if (step.getData1().equals("ENTER"))			
+			{
+				robot.keyPress(KeyEvent.VK_ENTER);
+				robot.keyRelease(KeyEvent.VK_ENTER);
+			}
+			if (step.getData1().equals("TAB"))			
+			{
+				robot.keyPress(KeyEvent.VK_TAB);
+				robot.keyRelease(KeyEvent.VK_TAB);
+			}
+			if (step.getData1().equals("DELETE"))			
+			{
+				robot.keyPress(KeyEvent.VK_DELETE);
+				robot.keyRelease(KeyEvent.VK_DELETE);
+			}
+			if (step.getData1().equals("ALTSHIFTT"))			
+			{
+				robot.keyPress(KeyEvent.VK_ALT);
+				robot.keyPress(KeyEvent.VK_SHIFT);
+				robot.keyPress(KeyEvent.VK_T);
+				robot.keyRelease(KeyEvent.VK_ALT);
+				robot.keyRelease(KeyEvent.VK_SHIFT);
+				robot.keyRelease(KeyEvent.VK_T);
+			}
+			result = "pass";
+			report.LogRepoter(hmap, result, step.getKeyword(), "Succesfully sent data:"+" "+data1value);		
+		}
+		catch(Exception ex)
+		{
+			report.LogRepoter(hmap, result, step.getKeyword(), ex.getMessage());
+		}		
+	}
+	public void CloseAllBrowsers(WebDriver WebDriver, TestStep step, HashMap<String, String> hmap) throws IOException {
+		 if(report == null){
+             report =  new ReportFunctions();
+		 }
+		 String result = "fail";
+		try{	
+			Runtime.getRuntime().exec("taskkill /F /IM iexplore.exe");
+			Runtime.getRuntime().exec("taskkill /F /IM IEDriverServer.exe");
+			//WebDriver.close();
+			result = "pass";
+			System.out.println("successfully closed all browsers");
+			report.LogRepoter(hmap, result, step.getKeyword(), "successfully closed all browsers");
+			
+		} catch (Exception e) {
+
+			System.out.println("unable to find the browser" + " " + e.getMessage());
+			report.LogRepoter(hmap, result, step.getKeyword(), "unable to find the browser" + " " + e.getMessage());			
+		
+		}
+		
+}
+    public void GetText(WebDriver WebDriver, TestStep step, HashMap<String, String> hmap)  throws IOException
+    {
+           if(report == null){
+                  report =  new ReportFunctions();
+           }
+           String result = "fail";
+           try{
+                  String[] refValues = step.getObjrefValue().split("\\->");
+                  
+                  String refInput = step.getData1().trim();
+                  String ovalue = null;
+                  
+                  if(refValues[0].equals("id"))
+                  {
+                        ovalue = WebDriver.findElement(By.id(refValues[1])).getText();
+                  }
+                  if(refValues[0].equals("xpath"))
+                  {
+                        ovalue = WebDriver.findElement(By.xpath(refValues[1])).getText();
+                  }
+                  if(refValues[0].equals("cssSelector"))
+                  {
+                        ovalue = WebDriver.findElement(By.cssSelector(refValues[1])).getText();
+                  }
+                  if(refValues[0].equals("className"))
+                  {
+                        ovalue = WebDriver.findElement(By.className(refValues[1])).getText();
+                  }
+                  
+                  
+                  if(ovalue!=null)
+                  {      
+                        hmap.put(refInput, ovalue);
+                        String GetTextElement = hmap.get(refInput);                          
+                        System.out.println("Succesfully captured the value   "+GetTextElement);
+                        result = "pass";
+                        report.LogRepoter(hmap, result, step.getKeyword(), "Succesfully capture the text :"+" "+GetTextElement);
+                     
+                  } else {
+                        System.out.println("value is null" +" "+ovalue); 
+                        report.LogRepoter(hmap, result, step.getKeyword(), "Unable to capture the text");
+                  }      
+           
+           }
+           catch(Exception ex)
+           {
+                  report.LogRepoter(hmap, result, step.getKeyword(), ex.getMessage());
+           }        
+    }
+	public void VerifyValue(WebDriver WebDriver, TestStep step, HashMap<String, String> hmap) throws IOException
+	{		
+		if(report == null){
+			report =  new ReportFunctions();
+		}
+		String result = "fail";
+		String ovalue=null;
+		String data1value=null;
+		try{
+			String[] refValues = step.getObjrefValue().split("\\->");
+			if (hmap.containsKey(step.getData1().trim())) 
+			{
+				data1value = hmap.get(step.getData1().trim());
+			}
+			else{
+				data1value = step.getData1().trim();
+			}
+			data1value = data1value.toUpperCase().trim().replace(" ", "");				
+			if(refValues[0].equals("id"))
+			{
+				ovalue=WebDriver.findElement(By.id(refValues[1])).getText();
+				ovalue=ovalue.toUpperCase().trim().replace(" ", "");				
+			}
+			if(refValues[0].equals("xpath"))
+			{
+				ovalue=WebDriver.findElement(By.xpath(refValues[1])).getText();
+				ovalue=ovalue.toUpperCase().trim().replace(" ", "");
+			}
+			if(refValues[0].equals("cssSelector"))
+			{
+				ovalue=WebDriver.findElement(By.cssSelector(refValues[1])).getText();
+				ovalue=ovalue.toUpperCase().trim().replace(" ", "");
+			}
+			if(refValues[0].equals("className"))
+			{
+				ovalue=WebDriver.findElement(By.className(refValues[1])).getText();
+				ovalue=ovalue.toUpperCase().trim().replace(" ", "");
+			}
+			if (ovalue.contains(data1value)){				 
+				result = "pass";
+				System.out.println("Both values matched");
+				report.LogRepoter(hmap, result, step.getKeyword(), "Both values matched " +ovalue+ " and " +data1value);
+			}
+			else{
+				System.out.println("Both values did not match");
+				report.LogRepoter(hmap, result, step.getKeyword(), "Both values did not match " +ovalue+ " and " +data1value);
+			}				
+			
+		}
+		catch(Exception ex)
+		{
+			report.LogRepoter(hmap, result, step.getKeyword(), ex.getMessage());
+		}		
+	}
+	public void GetValue(WebDriver WebDriver, TestStep step, HashMap<String, String> hmap) throws IOException
+	{
+		if(report == null){
+            report =  new ReportFunctions();
+		}
+		String result = "fail";
+		String value=null;
+		try{
+            String[] refValues = step.getObjrefValue().split("\\->");            
+            String refInput = step.getData1().trim();
+            String ovalue = null;
+            
+            if(refValues[0].equals("id"))
+            {
+                  ovalue = WebDriver.findElement(By.id(refValues[1])).getAttribute("value");
+            }
+            if(refValues[0].equals("xpath"))
+            {
+                  ovalue = WebDriver.findElement(By.xpath(refValues[1])).getAttribute("value");
+            }
+            if(refValues[0].equals("cssSelector"))
+            {
+                  ovalue = WebDriver.findElement(By.cssSelector(refValues[1])).getAttribute("value");
+            }
+            if(refValues[0].equals("className"))
+            {
+                  ovalue = WebDriver.findElement(By.className(refValues[1])).getAttribute("value");
+            }    
+            
+            if(ovalue!=null)
+            {      
+        	  hmap.put(refInput, ovalue);
+        	  value = hmap.get(refInput);                          
+              System.out.println("Succesfully captured the value   "+value);
+              result = "pass";
+              report.LogRepoter(hmap, result, step.getKeyword(), "Succesfully capture the value :"+" "+value);
+               
+            } else {
+            	System.out.println("Unable captured the value   "+value);
+                report.LogRepoter(hmap, result, step.getKeyword(), "Unable to capture the value");
+            }      
+     
+		}catch(Exception ex)
+        {
+            report.LogRepoter(hmap, result, step.getKeyword(), ex.getMessage());
+        } 
+		
+	}
+	public void IsDisplayed(WebDriver WebDriver, TestStep step, HashMap<String, String> hmap) throws IOException  
+	{
+		if(report == null){
+			report =  new ReportFunctions();
+		}
+		String result = "fail";
+		try{
+			String[] refValues = step.getObjrefValue().split("\\->");
+			String object = step.getData1().trim();
+			if(refValues[0].equals("id"))
+			{
+				WebDriver.findElement(By.id(refValues[1])).isDisplayed();
+			}
+			if(refValues[0].equals("xpath"))
+			{
+				WebDriver.findElement(By.xpath(refValues[1])).isDisplayed();
+			}
+			if(refValues[0].equals("cssSelector"))
+			{
+				WebDriver.findElement(By.cssSelector(refValues[1])).isDisplayed();
+			}
+			if(refValues[0].equals("className"))
+			{
+				WebDriver.findElement(By.className(refValues[1])).isDisplayed();
+			}
+			result = "pass";			
+			System.out.println(object+": Object displayed on web page");
+			report.LogRepoter(hmap, result, step.getKeyword(), object+": Object displayed on web page");
+			
+		}
+		catch(Exception ex)
+		{
+			System.out.println("Object wasn't displayed on web page");
+			report.LogRepoter(hmap, result, step.getKeyword(), ex.getMessage());
+		}
+	}
+	public void RandomNumber(WebDriver WebDriver, TestStep step, HashMap<String, String> hmap)  throws IOException
+	{
+		if(report == null){
+			report =  new ReportFunctions();
+		}
+		String result = "fail";
+		try{			
+			String data1 = step.getData1().trim();
+			Random rand = new Random(); 
+			int Val = rand.nextInt(899999999) + 1000000000; 
+			String Reqval = Integer.toString(Val); 
+			hmap.put(data1, Reqval);
+			data1 = hmap.get(data1);
+			result = "pass";
+			System.out.println("Succesfully captured the value   "+data1);
+			report.LogRepoter(hmap, result, step.getKeyword(), "Succesfully get the  value :"+" "+data1);							
+		}
+		catch(Exception ex)
+		{
+			report.LogRepoter(hmap, result, step.getKeyword(), ex.getMessage());
+		}			
+	}
+	public void MsgBox(WebDriver WebDriver, TestStep step, HashMap<String, String> hmap) throws IOException
+    {
+           if(report == null){
+                  report =  new ReportFunctions();
+           }
+           String result = "fail";                  
+           try{          
+               
+        	   String data1value = step.getData1().trim();
+        	   String data2value = step.getData2().trim();
+               int maxtimeout;                   
+               JFrame frame = new JFrame("Message to user");
+               JPanel panel = new JPanel();
+               panel.setLayout(new FlowLayout());
+               JLabel labeli = new JLabel(data2value);
+               panel.add(labeli);
+               JButton btnCancel = new JButton("Cancel");
+               btnCancel.addActionListener(null);
+               frame.add(panel);
+               frame.setSize(300, 300);
+               frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+               frame.setVisible(true);
+               maxtimeout = Integer.parseInt(data1value);
+               while (maxtimeout > 0) {
+                     maxtimeout--;
+                     frame.setTitle("Waiting...:" + maxtimeout + "]");
+                     try {
+                            Thread.sleep(1000);
+                     }catch (InterruptedException exc) {
+                           
+                     }                    
+               }
+               result = "pass";              
+               frame.setVisible(false);
+           }catch(Exception ex)
+           {
+                  report.LogRepoter(hmap, result, step.getKeyword(), ex.getMessage());
+           }
+    }
+	public void Run(WebDriver WebDriver, TestStep step, HashMap<String, String> hmap) throws IOException
+	{
+		if(report == null){
+            report =  new ReportFunctions();
+     }
+     String result = "fail";   
+     
+     EnterValue(WebDriver, step, hmap);
+     Click(WebDriver, step, hmap);
+     
+		
+	}
+	
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	public void IFrameClick(WebDriver WebDriver, TestStep step, HashMap<String, String> hmap) throws IOException 
+	{		
+		if(report == null){
+			report =  new ReportFunctions();
+		}		
+		String result = "fail";		
+		try{
+			String[] refValues = step.getObjrefValue().split("\\->");
+			String data1value = step.getData1().trim();
+			String data2value = step.getData2().trim();	
+			WebDriver.switchTo().frame(data1value);
+			WebElement element = null;
+			if(refValues[0].equals("id"))
+			{
+				element = WebDriver.findElement(By.id(refValues[1]));
+			}
+			if(refValues[0].equals("xpath"))
+			{
+				element = WebDriver.findElement(By.xpath(refValues[1]));
+			}
+			if(refValues[0].equals("cssSelector"))
+			{
+				element = WebDriver.findElement(By.cssSelector(refValues[1]));
+			}
+			if(refValues[0].equals("className"))
+			{
+				element = WebDriver.findElement(By.className(refValues[1]));
+			}
+			if(refValues[0].equals("partialLinkText"))
+			{
+				element = WebDriver.findElement(By.partialLinkText(refValues[1]));
+			}
+			
+			if (element.isEnabled()){
+				element.click();
+				System.out.println("Succesfully clicked the element");					
+				result = "pass";
+				report.LogRepoter(hmap, result, step.getKeyword(), "Succesfully clicked element");				
+			}
+			WebDriver.switchTo().defaultContent();
+		}
+		catch(Exception ex)
+		{
+			System.out.println("unable to find the locator:"+" "+ex.getMessage());
+			report.LogRepoter(hmap, result, step.getKeyword(), ex.getMessage());
+		}		
+	}
+	public void SwitchWindow(WebDriver WebDriver, TestStep step, HashMap<String, String> hmap) throws InterruptedException, IOException  
+	{		
+		if(report == null){
+			report =  new ReportFunctions();
+		}		
+		String result = "fail";	
+		try  
+		{
+			ParentWindowHandle = WebDriver.getWindowHandle();		
+			Set<String> allWindowHandles = WebDriver.getWindowHandles();			
+			for(String handle : allWindowHandles)	
+			{
+				if(!handle.equals(ParentWindowHandle))
+				{
+					WebDriver.switchTo().window(handle);	
+					Thread.sleep(1000);
+					WebDriver.manage().window().maximize();
+					result = "pass";
+					System.out.println("Successfully switch the window ");
+					report.LogRepoter(hmap, result, step.getKeyword(), "Successfully Switch the window ");
+					break;
+				}									
+			}			 
+		}
+		catch (Exception ex) 
+		{
+			System.out.println("Failed to switch the window ");
+			report.LogRepoter(hmap, result, step.getKeyword(), ex.getMessage());
+		}
+
+	}
+	public void CloseSwitchWindow(WebDriver WebDriver, TestStep step, HashMap<String, String> hmap) throws InterruptedException, IOException  
+	{
+		if(report == null){
+			report =  new ReportFunctions();
+		}		
+		String result = "fail";	
+		try  
+		{
+			Set<String> allWindowHandles = WebDriver.getWindowHandles();			
+			for(String handle : allWindowHandles)	
+			{
+				if(!handle.equals(ParentWindowHandle))
+				{
+					WebDriver.close();					
+					WebDriver.switchTo().window(ParentWindowHandle);
+					Thread.sleep(2000);
+					result = "pass";
+					System.out.println("Successfully closed the switch window");
+					report.LogRepoter(hmap, result, step.getKeyword(), "Successfully closed the switch window");
+					break;
+				}				
+			}			 
+		}
+		catch (Exception ex) 
+		{
+			System.out.println("Failed to close switch window ");
+			report.LogRepoter(hmap, result, step.getKeyword(), ex.getMessage());
+		}	
+
+	}
+	public void ClickThroughIteration(WebDriver WebDriver, TestStep step, HashMap<String, String> hmap) throws IOException 
+	{
+		if(report == null){
+			report =  new ReportFunctions();
+		}		
+		String result = "fail";		
+		try{
+			String[] refValues = step.getObjrefValue().split("\\->");
+			int index = Integer.parseInt(step.getData1().trim());
+			String data2value=step.getData2().trim();
+			List<WebElement> element = null;
+			if(refValues[0].equals("id"))
+			{
+				element = WebDriver.findElements(By.id(refValues[1]));
+			}
+			if(refValues[0].equals("xpath"))
+			{
+				element = WebDriver.findElements(By.xpath(refValues[1]));
+			}
+			if(refValues[0].equals("cssSelector"))
+			{
+				element = WebDriver.findElements(By.cssSelector(refValues[1]));
+			}
+			if(refValues[0].equals("className"))
+			{
+				element = WebDriver.findElements(By.className(refValues[1]));
+			}
+			int count = 0;
+			WebElement locator = null;
+			for(WebElement w: element)
+			{
+				if(count == index)
+				{
+					locator = w;
+					break;
+				}				
+				count = count + 1;
+			}		
+			if (locator.isEnabled()){						
+				locator.click();
+				System.out.println("Succesfully clicked on"+" "+data2value);	
+				result = "pass";
+				report.LogRepoter(hmap, result, step.getKeyword(), "Succesfully clicked"+" "+data2value);
+			}
+		}
+		catch(Exception ex)
+		{
+
+			System.out.println("unable to find the locator:"+" "+ex.getMessage());
+			report.LogRepoter(hmap, result, step.getKeyword(), ex.getMessage());
+		}		
+	}
+	public void EnterThroughIteration(WebDriver WebDriver, TestStep step, HashMap<String, String> hmap) throws IOException 
+	{
+		if(report == null){
+			report =  new ReportFunctions();
+		}		
+		String result = "fail";		
+		try{
+			String[] refValues = step.getObjrefValue().split("\\->");
+			int index = Integer.parseInt(step.getData1().trim());
+			String data2value=step.getData2().trim();
+			List<WebElement> element = null;
+			if(refValues[0].equals("id"))
+			{
+				element = WebDriver.findElements(By.id(refValues[1]));
+			}
+			if(refValues[0].equals("xpath"))
+			{
+				element = WebDriver.findElements(By.xpath(refValues[1]));
+			}
+			if(refValues[0].equals("cssSelector"))
+			{
+				element = WebDriver.findElements(By.cssSelector(refValues[1]));
+			}
+			if(refValues[0].equals("className"))
+			{
+				element = WebDriver.findElements(By.className(refValues[1]));
+			}
+			int count = 0;
+			WebElement locator = null;
+			for(WebElement w: element)
+			{
+				if(count == index)
+				{
+					locator = w;
+					break;
+				}				
+				count = count + 1;
+			}		
+			if (locator.isEnabled()){						
+				locator.clear();
+				locator.sendKeys(data2value);	
+				result = "pass";
+				System.out.println("Succesfully entered the value"+" "+data2value);	
+				report.LogRepoter(hmap, result, step.getKeyword(), "Succesfully entered the value"+" "+data2value);
+			}
+		}
+		catch(Exception ex)
+		{
+			System.out.println("unable to find the locator:"+" "+ex.getMessage());
+			report.LogRepoter(hmap, result, step.getKeyword(), ex.getMessage());
+		}		
+	}
+
+	public void LaunchBrowser1(WebDriver WebDriver, TestStep step, HashMap<String, String> hmap) throws IOException
+	{
+		if(report == null){
+			report =  new ReportFunctions();
+		}
+		String result = "fail";	
+		try{
+			String data1value = step.getData1().trim();
+			String data2value=step.getData2().trim();
+			ChromeOptions options;
+			switch(data2value) 
+			{		
+			case "IE explorer":
+				String opath = hmap.get("dirPath");
+				System.setProperty("webdriver.ie.driver","C:\\TestNgwithMaven\\Automation\\Java Jar Files\\IEDriverServer.exe");
+				DesiredCapabilities dc=new DesiredCapabilities();		
+				dc.setBrowserName("internet explorer");
+				dc.setPlatform(Platform.WINDOWS);		
+				WebDriver.get(data1value);
+				WebDriver.manage().window().maximize();
+				result = "pass";
+				System.out.println("Application launched succesfully");	
+				report.LogRepoter(hmap, result, step.getKeyword(), "Application launched succesfully");
+				break;
+			case "FireFox":
+				String workingDirectory = new java.io.File(".").getCanonicalPath();
+				String dpath = workingDirectory;
+				File file = new File("C:\\TestNgwithMaven\\Automation\\Savedoutput");      
+			       String[] myFiles;    
+			           if(file.isDirectory()){
+			               myFiles = file.list();
+			               for (int i=0; i<myFiles.length; i++) {
+			                   File myFile = new File(file, myFiles[i]); 
+			                   myFile.delete();
+			               }
+			            }
+				FirefoxProfile profile= new FirefoxProfile();
+				profile.setPreference("browser.download.dir", "C:\\TestNgwithMaven\\Automation\\Savedoutput");
+				profile.setPreference("browser.download.folderList", 2);
+				profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/x-excel, application/x-msexcel, application/excel, application/vnd.ms-excel,application/xls;");
+				profile.setPreference("pdfjs.disabled", "true");
+				WebDriver = new FirefoxDriver();
+				WebDriver.get(data1value);
+				WebDriver.manage().window().maximize();
+				result = "pass";
+				System.out.println("Application launched succesfully");	
+				report.LogRepoter(hmap, result, step.getKeyword(), "Application launched succesfully");
+				break;
+			case "Chrome":
+				String opathchrome = hmap.get("dirPath");
+				System.setProperty("webdriver.chrome.driver","C:\\TestNgwithMaven\\Automation\\Java Jar Files\\chromedriver.exe");
+				options=new ChromeOptions();
+				options.addArguments("disable-infobars");
+				options.addArguments("scrollIntoView(true)");		
+				WebDriver=new ChromeDriver();
+				WebDriver.get(data1value);
+				WebDriver.manage().window().maximize();
+				result = "pass";
+				System.out.println("Application launched succesfully");	
+				report.LogRepoter(hmap, result, step.getKeyword(), "Application launched succesfully");
+				break;
+			}
+		}
+		catch(Exception ex)
+		{
+			System.out.println("Failed to launch application");	
+			report.LogRepoter(hmap, result, step.getKeyword(), "Failed to launch application "+ex.getMessage());
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+//class
+}     
